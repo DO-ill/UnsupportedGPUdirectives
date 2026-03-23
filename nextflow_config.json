@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/nextflow_schema.json",
+  "title": "Custom pipeline parameters",
+  "description": "Converted to nf-schema compatible JSON Schema (draft 2020-12).",
+  "type": "object",
+
+  "$defs": {
+    "custom_params": {
+      "title": "Custom parameters",
+      "type": "object",
+      "properties": {
+        "textbox": {
+          "type": "string",
+          "title": "Text boxx_changed_",
+          "description": "Text boxx_changed_",
+          "help_text": "some textboxhelp_",
+          "minLength": 2,
+          "maxLength": 4500
+        },
+        "textbox1": {
+          "type": "string",
+          "title": "Text boxx_changed_1",
+          "description": "Text boxx_changed_1",
+          "help_text": "some textboxhelp_",
+          "minLength": 2,
+          "maxLength": 45
+        },
+        "text": {
+          "type": "string",
+          "title": "TEXT",
+          "description": "TEXT",
+          "help_text": "some textboxhelp"
+        },
+        "text1": {
+          "type": "string",
+          "title": "TEXT1",
+          "description": "TEXT1",
+          "help_text": "some textboxhelp"
+        },
+        "maxagesum": {
+          "type": "integer",
+          "title": "Max age sum",
+          "description": "Max age sum",
+          "help_text": "The maximum the sum of ages in the group may be",
+          "minimum": 0,
+          "maximum": 2222233
+        },
+        "input": {
+          "type": "array",
+          "title": "input",
+          "description": "input",
+          "help_text": "some TXT file selection help",
+          "minItems": 0,
+          "maxItems": 100000,
+          "items": {
+            "type": "string",
+            "format": "file-path"
+          },
+          "default": [
+            "fil.23a81d8d3dcb4b06890f08dc68c5690c"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+
+  "allOf": [
+    { "$ref": "#/$defs/custom_params" }
+  ]
+}
